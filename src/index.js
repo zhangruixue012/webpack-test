@@ -6,7 +6,7 @@ import App from './App'
 
 
 ReactDOM.render(
-  <App />,
+  <App>link的单元测试</App>,
   document.getElementById('root')
 );
 
