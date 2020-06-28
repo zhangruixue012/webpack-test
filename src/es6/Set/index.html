@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script type="module">
+
+    /**
+     * 1. set 中没有重复的值
+     * */
+    // const s = new Set();
+    // [2,3,5,4,5,2,2].forEach(x => s.add(x));
+    // for (let i of s) {
+    //     console.log(i);
+    // }
+
+    // const set = new Set([1,2,3,4,4]);
+    // console.log(set);
+    // console.log([...set]);
+
+    // const items = new Set([1,2,3,4,5,5,5,5,5]);
+    // console.log(items.size);
+
+    /**
+     * 2. 去除字符串中重复值
+     */
+   // console.log([...new Set('abcccccc')].join(''));
+
+    /**
+     * 3. keys()  values()
+     * Set 没有键名只有键值，keys方法和 values方法完全一致
+     */
+
+    // let set = new Set(['red','green','blue']);
+    // for(let item of set.keys()) {
+    //     console.log(item);
+    // }
+    //
+    // for(let item of set.values()) {
+    //     console.log(item);
+    // }
+    //
+    // console.log(set.keys());
+    /**
+     * 4. set 可以使用forEach
+     */
+
+    // let set = new Set([1,4,5,6,9]);
+    // set.forEach((key, value) => console.log(key +":"+ value));
+
+    /**
+     * 5. set 实现交集，并集，差集
+     */
+    // let set1 = new Set([1,2,3]);
+    // let set2 = new Set([4,2,3]);
+    //
+    // let all = new Set([...set1,...set2]);
+    // console.log('我是并集:',all);
+    //
+    // let unite = [...set1].filter(s => set2.has(s));
+    // console.log('我是交集：', unite);
+    //
+    // let diff = [...set1].filter(s => !set2.has(s));
+    // console.log('我是差集：', diff);
+
+    /**
+     * 6. 改变 set 本身
+     */
+    // let set = new Set([1,2,3,4]);
+    // set = new Set([...set].map(val => val *2));
+    // console.log(set);
+
+    // 1. set中无重复值
+    // 2. set的参数可以为数组和字符串new set([1,2,3])
+    // 3. set的keys()，values()方法返回相同的值
+    // 4. set 可以用 foreach 方法
+    // 5. set 结合 filter has 可以实现两个数组的交集，并集，差集
+
+
+
+
+
+    /*function fff() {
+        var x1 = [{a:1},{a:2},{a:3},{a:4}]
+        var x2 = [{a:5},{a:6},{a:7},{a:8}]
+
+        var x3 = [...x1,...x2];
+
+        var a = [{a:1},{a:2},{a:7}]
+
+        a.forEach(({ a })=>{
+            let i = x3.length;
+            while (i--){
+                if(x3[i].a==a){
+                    x3.splice(i, 1);
+                    return;
+                }
+            }
+        })
+        console.log(x1)
+        console.log(x2)
+        console.log(x3)
+    }
+
+
+    fff();
+*/
+/*
+    function changeObject(item) {
+        item.id = 'asdf'
+    }
+
+    var objectItem = {id:1};
+    changeObject(objectItem);
+    console.log("objectItem",objectItem);
+    ////////////////////////////////////////
+
+
+    function changeInt(item) {
+        item = "23"
+    }
+    var int = "234234";
+    changeInt(int);
+    console.log("int",int)*/
+
+
+
+    function changeObject(item, num) {
+        item = {name: 'zhangsan'};
+        num = 100;
+    }
+
+    var objectItem = {id:1};
+    var number = 5;
+
+    changeObject(objectItem, number);
+
+    console.log(objectItem);
+    console.log(number);
+</script>
+<body>
+
+</body>
+</html>

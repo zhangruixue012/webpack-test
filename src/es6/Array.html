@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    /**
+     * find():用于找出第一个符合条件的数组成员，如果没有符合条件的成员则返回undefined
+     */
+    console.log([1, 4, -5, 10].find((n) => n < 10)); // 1
+
+    console.log([1, 4, -5, 10].find((n) => n > 20)); // undifined
+
+
+    console.log([1, 4, -5, 10].find((value, index, arr) => value > 9)); // 10
+
+    /**
+     * findIndex():返回第一个符合条件的数组成员的位置，如果所有成员都不符合条件，则返回-1
+     */
+
+
+    console.log([1, 5, 10, 15].findIndex((value, index, arr) => value > 9)); // 2
+
+
+    /**
+     * find() 与 findIndex() 都可以接受第二个参数，用来绑定函数的this对象
+     *
+     * 回调函数的 this 指向person对象
+     */
+    function f(v) {
+        return v > this.age;
+    }
+
+    let person = {name: 'john', age: 20};
+
+    console.log([10, 12, 26, 15].find(f, person));
+
+
+    /**
+     * 都可以发现 NaN
+     *
+     */
+
+    console.log([NaN].indexOf(NaN)); // -1, indexOf无法发现NaN
+
+    console.log([NaN].findIndex(y => Object.is(NaN, y)),'findIndex找NaN'); // 0
+
+
+</script>
+</body>
+</html>

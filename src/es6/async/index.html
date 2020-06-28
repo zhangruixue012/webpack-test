@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../../utils/https/axios.min.js"></script>
+</head>
+<body>
+<script type="module">
+    /**
+     * 1. async 返回的是Promise 对象
+     *
+     */
+
+    //async 返回的是一个Promise对象
+    /*async function testAsync() {
+        return "hello async";
+    }
+    let result = testAsync();
+    console.log(result)*/
+
+
+    /**
+     * 2. async/await 执行顺序
+     *
+     * 很多人以为await会一直等待之后的表达式执行完之后才会继续执行后面的代码，实际上await是一个让出线程的标志。
+     * await后面的函数会先执行一遍(比如await Fn()的Fn ,并非是下一行代码)，然后就会跳出整个async函数来执行后面js栈的代码。
+     * 等本轮事件循环执行完了之后又会跳回到async函数中等待await后面表达式的返回值，如果返回值为非promise则继续执行async函数后面的代码，
+     * 否则将返回的promise放入Promise队列（Promise的Job Queue）
+     * 正常情况下，await 命令后面跟着的是 Promise ，如果不是的话，也会被转换成一个 立即 resolve 的 Promise。
+     *
+     */
+
+    //async/await 执行顺序
+   /* function testSometing() {
+        console.log("执行testSometing");
+        return "testSometing";
+    }
+
+    async function testAsync() {
+        console.log("执行testAsync");
+        return Promise.resolve("hello async");
+    }
+
+    async function test() {
+        console.log("test start...");
+        const v1 = await testSometing();
+        console.log(v1);
+        const v2 = await testAsync();
+        console.log(v2);
+        console.log(v1, v2);
+    }
+
+    test();
+
+    var promise = new Promise((resolve)=> { console.log("promise start.."); resolve("promise");});//3
+    promise.then((val)=> console.log(val));
+
+    console.log("test end...")
+*/
+
+    //test start...
+
+    //执行testSometing
+
+    //promise start..
+
+    //test end...
+
+    //testSometing
+
+    //执行testAsync
+
+    //promise
+
+    //hello async
+
+    //testSometing,hello async
+
+
+
+    /**
+     * 3. async函数内部抛出的错误，会导致返回的promise 对象变为reject状态，抛出的错误对象会被catch回调接收到
+     *
+     */
+
+    /*function timeout(ms) {
+        return new Promise((resolve) => {
+            setTimeout(resolve, ms);
+        });
+    }
+
+    async function asyncPrint(value, ms) {
+        await timeout(ms);
+        console.log(value);
+    }
+
+    asyncPrint('hello world', 1000);*/
+
+
+    /**
+     * 按顺序完成异步操作（并发发出请求，按顺序返回）
+     */
+
+    /*async function fetch(url) {
+        axios.get('/json/async.json')
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
+
+
+    async function logInOrder(urls) {
+        // 并发读取远程URL
+        const textPromises = urls.map(async url => {
+            const response = await fetch(url);
+            return response.text();
+        });
+
+        // 按次序输出
+        for (const textPromise of textPromises) {
+            console.log(await textPromise);
+        }
+    }
+
+    logInOrder();*/
+
+    /**
+     * 在 async 里必须要将结果return回来，不然的话不管执行reject 还是resolved 的值都为undefined,建议使用箭头函数
+     *
+     */
+
+    /**
+     * 使用 try{} catch{} 拦截async 函数内部的错，不会导致外部运行阻塞
+     *
+     * */
+
+   /* let last;
+    async function throwError() {
+        try{
+            await Promise.reject('error');
+            last = await '没有执行';
+        }catch(error){
+            console.log('has Error stop');
+        }
+    }
+
+    throwError().then(success => console.log('成功', last))
+        .catch(error => console.log('失败',last))*/
+
+
+
+
+    function testSometing() {
+        console.log("testSomething");
+        return "return testSomething";
+    }
+
+    async function testAsync() {
+        console.log("testAsync");
+        return Promise.resolve("hello async");
+    }
+
+    async function test() {
+        console.log("test start...");
+
+        const testFn1 = await testSometing();
+        console.log(testFn1);
+
+        const testFn2 = await testAsync();
+        console.log(testFn2);
+
+        console.log('test end...');
+    }
+
+    test();
+
+    var promiseFn = new Promise((resolve)=> {
+        console.log("promise START...");
+        resolve("promise RESOLVE");
+    });
+    promiseFn.then((val)=> console.log(val));
+
+    console.log("===END===");
+
+
+
+    /**
+     * 不加async
+     *
+     * */
+
+    //test start...
+    //testSomething
+    //promise START...
+    //===END===
+
+    //return testSomething
+    //testAsync
+
+    //promise RESOLVE
+
+    //hello async
+    //test end...
+
+
+
+    /**
+     *加async
+     */
+    //test start...
+    //testSomething
+    //promise START...
+    //===END===
+
+    //promise RESOLVE
+
+    //return testSomething
+    //testAsync
+
+    //hello async
+    //test end...
+
+
+</script>
+</body>
+</html>
