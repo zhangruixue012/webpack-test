@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+
+
+ /*   var add = function() {
+        var _this = this,
+            _args = arguments;
+
+        return function() {
+            if (!arguments.length) {
+                var sum = 0;
+                for (var i = 0,c; c = _args[i++];){
+                    sum += c;
+                }
+                return sum;
+            } else {
+                Array.prototype.push.apply(_args, arguments);
+                return arguments.callee;
+            }
+        }
+    };
+    add(1)(2)(3)(4)();//10 */
+
+/* let monthlyCost = 0;
+ let cost = function(money){
+     monthlyCost += money;
+ };
+ cost(100); // 第1天开销
+ cost(200); // 第2天开销
+ cost(300); // 第3天开销
+ // cost(800); // 第30天开销
+
+ console.log(monthlyCost) // 输出：600*/
+
+ /*const cost = (function () {
+     let args = [];
+     return function () {
+         if (arguments.length == 0) {
+             let money = 0;
+             for (let i = 0; i < args.length; i++) {
+                 money += args[i]
+             }
+             return money;
+         } else {
+             [].push.apply(args, arguments);
+         }
+     }
+ })();
+
+ cost(100); // 未真正求值
+ cost(200); // 未真正求值
+ cost(300); // 未真正求值
+
+ console.log(cost()); // 求值并输出600*/
+
+
+     /**
+      * 这是一个通用的 currying 函数
+      * @param fn
+      * @returns {Function}
+      */
+    /*const currying = function (fn) {
+         let args = [];
+         return function () {
+             if (arguments.length === 0) {
+                 return fn.apply(this, args);
+             }
+             [].push.apply(args, arguments);
+             return arguments.callee;
+         }
+     };
+
+    const cost = (function () {
+         let money = 0;
+         return function () {
+             for (let i = 0; i < arguments.length; i++) {
+                 money += arguments[i]
+             }
+             return money;
+         }
+     })();
+
+     let changeCost = currying(cost); // 转化成 currying 函数
+
+     cost(100); // 未真正求值
+     cost(200); // 未真正求值
+     cost(300); // 未真正求值
+
+     console.log(changeCost()); // 求值并输出600*/
+
+/* function square(i){
+     return i * i;
+ }
+ function dubble(i){
+     return i *= 2;
+ }
+ function map(handeler,list){
+     return list.map(handeler)
+ }
+
+ // 数组的每一项平方
+ map(square, [1, 2, 3, 4, 5]);
+ map(square, [6, 7, 8, 9, 10]);
+ map(square, [10, 20, 30, 40, 50]);
+
+ // 数组的每一项加倍
+ map(dubble, [1, 2, 3, 4, 5]);
+ map(dubble, [6, 7, 8, 9, 10]);
+ map(dubble, [10, 20, 30, 40, 50]);*/
+
+ var curry = function(fn) {
+     var _args = [];
+     return function cb() {
+         if (arguments.length == 0) {
+             return fn.apply(this, _args)
+         }
+         Array.prototype.push.apply(_args, arguments);
+         return cb;
+     }
+ }
+</script>
+</body>
+</html>

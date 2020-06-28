@@ -1,6 +1,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Print from './print';
 import App from './App'
 
 
@@ -8,6 +9,13 @@ ReactDOM.render(
   <App />,
   document.getElementById('root')
 );
+
+
+const printMe = new Print();
+
+console.log('实例属性可以被子类继承:', printMe.count);
+
+console.log('静态属性不可以被子类继承:', printMe.write);
 
 
 if ('serviceWorker' in navigator) {

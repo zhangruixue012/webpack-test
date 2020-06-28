@@ -1,5 +1,9 @@
-console.log('The print.js module has loaded! See the network tab in dev tools...');
+export default class Print {
 
-export default () => {
-  console.log('Button Clicked: Here\'s "some text"!');
+  static write = false;
+
+  count = 0;
+
+  isPrint = true;
+
 }
