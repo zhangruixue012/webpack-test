@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import ReactEmojiPicker from '@src/react-emoji-picker'
+import EmojiPanel from '@src/emoji-panel'
 
 const STATUS = {
     HOVERED: 'hovered',
@@ -9,16 +11,13 @@ class App extends Component {
       render() {
         return (
           <div>
-              {/*<div>*/}
-              {/*    我是ReactSvgEmoji:*/}
-              {/*    <ReactSvgEmoji />*/}
-              {/*</div>*/}
 
-              {/*<div style={{ marginTop: '20px' }}>*/}
-              {/*    我是ReactEmojiPicker:*/}
-              {/*    <ReactEmojiPicker/>*/}
-              {/*</div>*/}
+              {/*<div style={{ marginTop: '20px' }}>
+                  我是ReactEmojiPicker:
+                  <ReactEmojiPicker/>
+              </div>*/}
 
+              {/*<EmojiPanel />*/}
 
           </div>
         );

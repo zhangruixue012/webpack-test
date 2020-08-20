@@ -10,6 +10,9 @@ console.log('mode:', mode);
 console.log('domain:', domain);
 
 const modeConfig = env => require(`./build-utils/webpack.${env}`)(env);
+const resolve = dir => path.resolve(__dirname, dir);
+
+console.log('我是resolve:', resolve);
 
 
 console.log('modeConfig:', modeConfig);

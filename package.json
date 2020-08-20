@@ -16,12 +16,12 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.10.1",
-    "babel-eslint": "^10.1.0",
     "emojione": "^2.2.7",
-    "less-loader": "^6.2.0",
     "lodash": "^4.17.15",
     "mobx": "^5.15.4",
     "mobx-react": "^6.2.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-svg-emoji": "^1.1.9-beta"
   },
   "devDependencies": {
@@ -45,9 +45,8 @@
     "http-server": "^0.12.3",
     "husky": "^4.2.5",
     "jest": "^26.1.0",
+    "less-loader": "^6.2.0",
     "lint-staged": "^10.2.11",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
     "react-emojipicker": "^1.1.1",
     "react-test-renderer": "^16.13.1",
     "style-loader": "^1.2.1",
