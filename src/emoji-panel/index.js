@@ -1,41 +1,40 @@
 import React, { Component } from 'react';
 import { observable } from 'mobx';
 import { observer } from 'mobx-react';
-import { QQfaceMap } from './qqfaceMap'
-import './panelemoji.less'
-import './face.less'
-import './index.less'
+import { QQfaceMap } from './qqfaceMap';
+import './panelemoji.less';
+import './face.less';
+import './index.less';
 
 @observer
-class emojiPanel extends Component{
-
+class emojiPanel extends Component {
     fuhao = [
-        "😁", "😷", "😂", "😝", "😳", "😱", "😔", "😒", "[嘿哈]", "[捂脸]", "[奸笑]", "[机智]", "[皱眉]", "[耶]", "👻",
-        "🙏", "💪", "🎉", "🎁", "[红包]", "[鸡]", "😊", "😃", "☺", "😉", "😍", "😘", "😚", "😬", "😌",
-        "😜", "😏", "😓", "😞", "😖", "😢", "😰", "😨", "😣", "😢", "😭", "😵", "😠", "😡", "😪",
-        "👿", "👽", "❤", "💔", "💘", "✨", "⭐", "❗", "❓", "💤", "💦", "🎵", "🔥", "💩", "👍",
-        "👎", "👊", "✌", "👆", "👇", "👉", "👈", "☝", "💏", "💑", "👦", "👧", "👩", "👨", "👼",
-        "💀", "💋", "☀", "☔", "☁", "⛄", "🌙", "⚡", "🌊", "🐱", "🐶", "🐭", "🐹", "🐰", "🐺",
-        "🐸", "🐯", "🐨", "🐻", "🐷", "🐮", "🐗", "🐵", "🐴", "🐍", "🐦", "🐔", "🐧", "🐛", "🐙",
-        "🐠", "🐳", "🐬", "🌹", "🌺", "🌴", "🌵", "💝", "🎃", "🎅", "🎄", "🔔", "🎈", "💿", "📷",
-        "🎥", "💻", "📺", "☎", "🔓", "🔒", "🔑", "🔨", "💡", "📫", "🛀", "💰", "💣", "🔫", "💊",
-        "🏈", "🏀", "⚽", "⚾", "⛳", "🏆", "👾", "🎤", "🎸", "👙", "👑", "🌂", "👜", "💄", "💍",
-        "💎", "☕", "🍺", "🍻", "🍸", "🍔", "🍟", "🍝", "🍣", "🍜", "🍳", "🍦", "🎂", "🍅", "✈",
-        "🚀", "🚲", "🚄", "⚠", "🏁", "🚹", "🚺", "⭕", "✖", "©", "®", "™"];
+      '😁', '😷', '😂', '😝', '😳', '😱', '😔', '😒', '[嘿哈]', '[捂脸]', '[奸笑]', '[机智]', '[皱眉]', '[耶]', '👻',
+      '🙏', '💪', '🎉', '🎁', '[红包]', '[鸡]', '😊', '😃', '☺', '😉', '😍', '😘', '😚', '😬', '😌',
+      '😜', '😏', '😓', '😞', '😖', '😢', '😰', '😨', '😣', '😢', '😭', '😵', '😠', '😡', '😪',
+      '👿', '👽', '❤', '💔', '💘', '✨', '⭐', '❗', '❓', '💤', '💦', '🎵', '🔥', '💩', '👍',
+      '👎', '👊', '✌', '👆', '👇', '👉', '👈', '☝', '💏', '💑', '👦', '👧', '👩', '👨', '👼',
+      '💀', '💋', '☀', '☔', '☁', '⛄', '🌙', '⚡', '🌊', '🐱', '🐶', '🐭', '🐹', '🐰', '🐺',
+      '🐸', '🐯', '🐨', '🐻', '🐷', '🐮', '🐗', '🐵', '🐴', '🐍', '🐦', '🐔', '🐧', '🐛', '🐙',
+      '🐠', '🐳', '🐬', '🌹', '🌺', '🌴', '🌵', '💝', '🎃', '🎅', '🎄', '🔔', '🎈', '💿', '📷',
+      '🎥', '💻', '📺', '☎', '🔓', '🔒', '🔑', '🔨', '💡', '📫', '🛀', '💰', '💣', '🔫', '💊',
+      '🏈', '🏀', '⚽', '⚾', '⛳', '🏆', '👾', '🎤', '🎸', '👙', '👑', '🌂', '👜', '💄', '💍',
+      '💎', '☕', '🍺', '🍻', '🍸', '🍔', '🍟', '🍝', '🍣', '🍜', '🍳', '🍦', '🎂', '🍅', '✈',
+      '🚀', '🚲', '🚄', '⚠', '🏁', '🚹', '🚺', '⭕', '✖', '©', '®', '™'];
 
     @observable
     activePanel = 'qq';
 
     constructor(props) {
-        super(props);
+      super(props);
     }
 
-    switchPanel = key => {
-        this.activePanel = key;
+    switchPanel = (key) => {
+      this.activePanel = key;
     }
 
     clickFace = (key) => {
-        // this.$emit('choose', key);
+      // this.$emit('choose', key);
     }
 
     // closeMe(e) {
@@ -46,54 +45,55 @@ class emojiPanel extends Component{
     // }
 
     render() {
-        const { switchPanel, activePanel, clickFace, fuhao } = this;
+      const {
+        switchPanel, activePanel, clickFace, fuhao,
+      } = this;
 
-        console.log('-----render-----:', fuhao);
-        return (
-            <div>
-                <div className="emoji-panel">
-                    <div className="emoji-hd">
-                        <div className="hd-item">
-                            <a onClick={() => switchPanel('qq')} className={`hd-btn ${ activePanel === 'qq' ? 'active' : '' }`}>QQ表情</a>
-                        </div>
-                        <div className="hd-item">
-                            <a onClick={() => switchPanel('emoji')} className={`hd-btn ${ activePanel === 'emoji' ? 'active' : '' }`}>符号表情</a>
-                        </div>
-                    </div>
-                    <div className="emoji-bd">
-                        <div style={{ overflow: 'hidden' }}>
-                            {
+      console.log('-----render-----:', fuhao);
+      return (
+        <div>
+          <div className="emoji-panel">
+            <div className="emoji-hd">
+              <div className="hd-item">
+                <a onClick={() => switchPanel('qq')} className={`hd-btn ${activePanel === 'qq' ? 'active' : ''}`}>QQ表情</a>
+              </div>
+              <div className="hd-item">
+                <a onClick={() => switchPanel('emoji')} className={`hd-btn ${activePanel === 'emoji' ? 'active' : ''}`}>符号表情</a>
+              </div>
+            </div>
+            <div className="emoji-bd">
+              <div style={{ overflow: 'hidden' }}>
+                {
                                 activePanel === 'qq' && (
-                                    <div className="face-box">
-                                        <div className="qq-face">
-                                            {
-                                                QQfaceMap.map(item => {
-                                                    <a key={Math.random()} className={`face qq_face${item[Object.keys(item)[0]]}`}/>
+                                <div className="face-box">
+                                  <div className="qq-face">
+                                    {
+                                                QQfaceMap.map((item) => {
+                                                  <a key={Math.random()} className={`face qq_face${item[Object.keys(item)[0]]}`} />;
                                                 })
                                             }
-                                    </div>
-                                    </div>
+                                  </div>
+                                </div>
                                 )
                             }
 
-                            {
+                {
                                 activePanel === 'emoji' && (
-                                    <div className="face-box">
-                                        <div className="emoji-face">
-                                            {
-                                                fuhao.map(index => <a key={Math.random()} className={`panel_emoji panel_emoji${index}`}/>)
+                                <div className="face-box">
+                                  <div className="emoji-face">
+                                    {
+                                                fuhao.map((index) => <a key={Math.random()} className={`panel_emoji panel_emoji${index}`} />)
                                             }
-                                        </div>
-                                    </div>
+                                  </div>
+                                </div>
                                 )
                             }
-                        </div>
-                    </div>
-                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        )
+      );
     }
-
 }
 
-export default emojiPanel
+export default emojiPanel;

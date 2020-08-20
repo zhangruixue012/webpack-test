@@ -1,11 +1,11 @@
-import { mixins } from './mixins'
+import { mixins } from './mixins';
 
 const Foo = {
-  foo() { console.log('foo') }
+  foo() { console.log('foo'); },
 };
 
 @mixins(Foo)
 class MyClass {}
 
-let obj = new MyClass();
+const obj = new MyClass();
 // console.log('obj:', obj.foo());

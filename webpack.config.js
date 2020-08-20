@@ -23,7 +23,6 @@ module.exports = () => {
             entry: {
                 app: './src/index.js'
             },
-
             output: {
                 filename: '[name]-[chunkhash].bundle.js',
                 path: path.resolve(__dirname, 'dist')
@@ -52,7 +51,7 @@ module.exports = () => {
                     {
                         test: /\.js$/,
                         exclude: /(node_modules|bower_components|lib)/,
-                        use: ['babel-loader']
+                        use: ['babel-loader', 'eslint-loader']
                     }
                 ]
             },
