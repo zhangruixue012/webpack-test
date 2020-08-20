@@ -20,12 +20,18 @@ module.exports = () => {
             entry: {
                 app: './src/index.js'
             },
-      
+
             output: {
                 filename: '[name]-[chunkhash].bundle.js',
                 path: path.resolve(__dirname, 'dist')
             },
-
+            resolve: {
+                alias: {
+                    '@src': resolve('./src'),
+                    '@assets': resolve('./src/assets'),
+                    '@es6': resolve('./src/es6'),
+                }
+            },
             module: {
                 rules: [
                     {
@@ -47,7 +53,7 @@ module.exports = () => {
                     }
                 ]
             },
-      
+
             plugins: [
                 new HtmlWebpackPlugin({
 					filename: 'index.html',
@@ -62,10 +68,9 @@ module.exports = () => {
                     skipWaiting: true
                 })
             ]
-      
-        }, 
+
+        },
         modeConfig(mode)
     )
-    
+
 }
-  

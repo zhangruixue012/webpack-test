@@ -2,6 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Print from './print';
+import HigherFunction from './higher-function'
 import App from './App'
 
 
