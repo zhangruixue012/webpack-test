@@ -1,7 +1,8 @@
-export function mixins(...list) {
-  console.log('...list:', ...list);
+/* eslint-disable */
+export default function mixins(...list) {
+	console.log("...list:", ...list);
 
-  return function (target) {
-    Object.assign(target.prototype, { ...list });
-  };
+	return function (target) {
+		Object.assign(target.prototype, { ...list });
+	};
 }
