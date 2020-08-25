@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-<script type="text/javascript">
-
-
-
- /*   var add = function() {
+	<head>
+		<meta charset="UTF-8" />
+		<title>Title</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*   var add = function() {
         var _this = this,
             _args = arguments;
 
@@ -29,7 +25,7 @@
     };
     add(1)(2)(3)(4)();//10 */
 
-/* let monthlyCost = 0;
+			/* let monthlyCost = 0;
  let cost = function(money){
      monthlyCost += money;
  };
@@ -40,7 +36,7 @@
 
  console.log(monthlyCost) // 输出：600*/
 
- /*const cost = (function () {
+			/*const cost = (function () {
      let args = [];
      return function () {
          if (arguments.length == 0) {
@@ -61,13 +57,12 @@
 
  console.log(cost()); // 求值并输出600*/
 
-
-     /**
-      * 这是一个通用的 currying 函数
-      * @param fn
-      * @returns {Function}
-      */
-    /*const currying = function (fn) {
+			/**
+			 * 这是一个通用的 currying 函数
+			 * @param fn
+			 * @returns {Function}
+			 */
+			/*const currying = function (fn) {
          let args = [];
          return function () {
              if (arguments.length === 0) {
@@ -96,7 +91,7 @@
 
      console.log(changeCost()); // 求值并输出600*/
 
-/* function square(i){
+			/* function square(i){
      return i * i;
  }
  function dubble(i){
@@ -116,16 +111,16 @@
  map(dubble, [6, 7, 8, 9, 10]);
  map(dubble, [10, 20, 30, 40, 50]);*/
 
- var curry = function(fn) {
-     var _args = [];
-     return function cb() {
-         if (arguments.length == 0) {
-             return fn.apply(this, _args)
-         }
-         Array.prototype.push.apply(_args, arguments);
-         return cb;
-     }
- }
-</script>
-</body>
+			var curry = function (fn) {
+				var _args = [];
+				return function cb() {
+					if (arguments.length == 0) {
+						return fn.apply(this, _args);
+					}
+					Array.prototype.push.apply(_args, arguments);
+					return cb;
+				};
+			};
+		</script>
+	</body>
 </html>
