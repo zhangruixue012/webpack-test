@@ -4,7 +4,6 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"fix": "eslint --fix src",
 		"webpack": "webpack",
 		"webpack-dev-server": "webpack-dev-server",
 		"watch": "webpack --watch",
