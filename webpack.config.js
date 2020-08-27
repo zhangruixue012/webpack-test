@@ -1,64 +1,64 @@
-const path = require("path");
-const argv = require("yargs").argv;
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const webpackMerge = require("webpack-merge");
-const WorkboxPlugin = require("workbox-webpack-plugin");
+const path = require('path');
+const argv = require('yargs').argv;
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const webpackMerge = require('webpack-merge');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 const { mode, domain } = argv.env;
 
-console.log("mode:", mode);
-console.log("domain:", domain);
+console.log('mode:', mode);
+console.log('domain:', domain);
 
-const modeConfig = (env) => require(`./build-utils/webpack.${env}`)(env);
-const resolve = (dir) => path.resolve(__dirname, dir);
+const modeConfig = env => require(`./build-utils/webpack.${env}`)(env);
+const resolve = dir => path.resolve(__dirname, dir);
 
-console.log("我是resolve:", resolve);
+console.log('我是resolve:', resolve);
 
-console.log("modeConfig:", modeConfig);
+console.log('modeConfig:', modeConfig);
 
 module.exports = () => {
 	return webpackMerge(
 		{
 			entry: {
-				app: "./src/index.js",
+				app: './src/index.js',
 			},
 			output: {
-				filename: "[name]-[chunkhash].bundle.js",
-				path: path.resolve(__dirname, "dist"),
+				filename: '[name]-[chunkhash].bundle.js',
+				path: path.resolve(__dirname, 'dist'),
 			},
 			resolve: {
 				alias: {
-					"@src": resolve("./src"),
-					"@assets": resolve("./src/assets"),
-					"@es6": resolve("./src/es6"),
+					'@src': resolve('./src'),
+					'@assets': resolve('./src/assets'),
+					'@es6': resolve('./src/es6'),
 				},
 			},
 			module: {
 				rules: [
 					{
 						test: /\.(sc|c)ss$/,
-						use: ["style-loader", "css-loader"],
+						use: ['style-loader', 'css-loader'],
 					},
 					{
 						test: /\.(png|svg|jpg|gif)$/,
-						use: ["file-loader"],
+						use: ['file-loader'],
 					},
 					{
 						test: /\.(woff|woff2|eot|ttf|otf)$/,
-						use: ["file-loader"],
+						use: ['file-loader'],
 					},
 					{
 						test: /\.js$/,
 						exclude: /(node_modules|bower_components|lib)/,
-						use: ["babel-loader", "eslint-loader"],
+						use: ['babel-loader', 'eslint-loader'],
 					},
 				],
 			},
 
 			plugins: [
 				new HtmlWebpackPlugin({
-					filename: "index.html",
-					template: "./src/index.html",
+					filename: 'index.html',
+					template: './src/index.html',
 					minify: false,
 				}),
 				new CleanWebpackPlugin(),

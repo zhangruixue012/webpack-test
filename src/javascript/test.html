@@ -5,17 +5,14 @@
 		<title>Title</title>
 	</head>
 	<body>
-		<label>测试</label><input maxlength="10" />
+		<label>测试</label>
+		<input maxlength="10" />
 
 		<script type="module">
-			const arr = ["a", "b", "c", "d", "e"];
+			const arr = ['a', 'b', 'c', 'd', 'e'];
 
 			function swapArr(arr, index1, index2) {
-				arr.splice(
-					index1 - 1,
-					1,
-					...arr.splice(index2 - 1, 1, arr[index1 - 1])
-				);
+				arr.splice(index1 - 1, 1, ...arr.splice(index2 - 1, 1, arr[index1 - 1]));
 				return arr;
 			}
 

@@ -1,23 +1,23 @@
 /*eslint-disable*/
-const CACHE_NAME = "my-site-cache-v1";
+const CACHE_NAME = 'my-site-cache-v1';
 const urlsToCache = [];
 
-console.log("我执行了....");
+console.log('我执行了....');
 
-self.addEventListener("install", (event) => {
+self.addEventListener('install', event => {
 	// Perform install steps
 
 	event.waitUntil(
-		caches.open(CACHE_NAME).then((cache) => {
-			console.log("Opened cache");
+		caches.open(CACHE_NAME).then(cache => {
+			console.log('Opened cache');
 			return cache.addAll(urlsToCache);
 		})
 	);
 });
 
-self.addEventListener("fetch", (event) => {
+self.addEventListener('fetch', event => {
 	event.respondWith(
-		caches.match(event.request).then((response) => {
+		caches.match(event.request).then(response => {
 			// Cache hit - return response
 			if (response) {
 				return response;
@@ -27,9 +27,9 @@ self.addEventListener("fetch", (event) => {
 	);
 });
 
-self.addEventListener("fetch", (event) => {
+self.addEventListener('fetch', event => {
 	event.respondWith(
-		caches.match(event.request).then((response) => {
+		caches.match(event.request).then(response => {
 			// Cache hit - return response
 			if (response) {
 				return response;
@@ -41,13 +41,9 @@ self.addEventListener("fetch", (event) => {
 			// to clone the response.
 			const fetchRequest = event.request.clone();
 
-			return fetch(fetchRequest).then((response) => {
+			return fetch(fetchRequest).then(response => {
 				// Check if we received a valid response
-				if (
-					!response ||
-					response.status !== 200 ||
-					response.type !== "basic"
-				) {
+				if (!response || response.status !== 200 || response.type !== 'basic') {
 					return response;
 				}
 
@@ -57,7 +53,7 @@ self.addEventListener("fetch", (event) => {
 				// to clone it so we have two streams.
 				const responseToCache = response.clone();
 
-				caches.open(CACHE_NAME).then((cache) => {
+				caches.open(CACHE_NAME).then(cache => {
 					cache.put(event.request, responseToCache);
 				});
 
@@ -67,13 +63,13 @@ self.addEventListener("fetch", (event) => {
 	);
 });
 
-self.addEventListener("activate", (event) => {
-	const cacheWhitelist = ["pages-cache-v1", "blog-posts-cache-v1"];
+self.addEventListener('activate', event => {
+	const cacheWhitelist = ['pages-cache-v1', 'blog-posts-cache-v1'];
 
 	event.waitUntil(
-		caches.keys().then((cacheNames) =>
+		caches.keys().then(cacheNames =>
 			Promise.all(
-				cacheNames.map((cacheName) => {
+				cacheNames.map(cacheName => {
 					if (cacheWhitelist.indexOf(cacheName) === -1) {
 						return caches.delete(cacheName);
 					}
