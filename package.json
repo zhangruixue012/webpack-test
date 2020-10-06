@@ -57,7 +57,7 @@
 		"jest": "^26.1.0",
 		"less-loader": "^6.2.0",
 		"lint-staged": "^10.2.11",
-		"prettier": "^1.17.1",
+		"prettier": "^2.1.2",
 		"pretty-quick": "^2.0.1",
 		"react-emojipicker": "^1.1.1",
 		"react-test-renderer": "^16.13.1",
@@ -84,5 +84,9 @@
 			"pretty-quick —-staged",
 			"git add"
 		]
+	},
+	"prettier": {
+		"singleQuote": true,
+		"semi": false
 	}
 }

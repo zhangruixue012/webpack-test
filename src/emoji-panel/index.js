@@ -1,199 +1,199 @@
-import React, { Component } from "react";
-import { observable } from "mobx";
-import { observer } from "mobx-react";
-import { QQfaceMap } from "./qqfaceMap";
-import "./panelemoji.less";
-import "./face.less";
-import "./index.less";
+import React, { Component } from 'react'
+import { observable } from 'mobx'
+import { observer } from 'mobx-react'
+import { QQfaceMap } from './qqfaceMap'
+import './panelemoji.less'
+import './face.less'
+import './index.less'
 
 @observer
 class emojiPanel extends Component {
 	fuhao = [
-		"😁",
-		"😷",
-		"😂",
-		"😝",
-		"😳",
-		"😱",
-		"😔",
-		"😒",
-		"[嘿哈]",
-		"[捂脸]",
-		"[奸笑]",
-		"[机智]",
-		"[皱眉]",
-		"[耶]",
-		"👻",
-		"🙏",
-		"💪",
-		"🎉",
-		"🎁",
-		"[红包]",
-		"[鸡]",
-		"😊",
-		"😃",
-		"☺",
-		"😉",
-		"😍",
-		"😘",
-		"😚",
-		"😬",
-		"😌",
-		"😜",
-		"😏",
-		"😓",
-		"😞",
-		"😖",
-		"😢",
-		"😰",
-		"😨",
-		"😣",
-		"😢",
-		"😭",
-		"😵",
-		"😠",
-		"😡",
-		"😪",
-		"👿",
-		"👽",
-		"❤",
-		"💔",
-		"💘",
-		"✨",
-		"⭐",
-		"❗",
-		"❓",
-		"💤",
-		"💦",
-		"🎵",
-		"🔥",
-		"💩",
-		"👍",
-		"👎",
-		"👊",
-		"✌",
-		"👆",
-		"👇",
-		"👉",
-		"👈",
-		"☝",
-		"💏",
-		"💑",
-		"👦",
-		"👧",
-		"👩",
-		"👨",
-		"👼",
-		"💀",
-		"💋",
-		"☀",
-		"☔",
-		"☁",
-		"⛄",
-		"🌙",
-		"⚡",
-		"🌊",
-		"🐱",
-		"🐶",
-		"🐭",
-		"🐹",
-		"🐰",
-		"🐺",
-		"🐸",
-		"🐯",
-		"🐨",
-		"🐻",
-		"🐷",
-		"🐮",
-		"🐗",
-		"🐵",
-		"🐴",
-		"🐍",
-		"🐦",
-		"🐔",
-		"🐧",
-		"🐛",
-		"🐙",
-		"🐠",
-		"🐳",
-		"🐬",
-		"🌹",
-		"🌺",
-		"🌴",
-		"🌵",
-		"💝",
-		"🎃",
-		"🎅",
-		"🎄",
-		"🔔",
-		"🎈",
-		"💿",
-		"📷",
-		"🎥",
-		"💻",
-		"📺",
-		"☎",
-		"🔓",
-		"🔒",
-		"🔑",
-		"🔨",
-		"💡",
-		"📫",
-		"🛀",
-		"💰",
-		"💣",
-		"🔫",
-		"💊",
-		"🏈",
-		"🏀",
-		"⚽",
-		"⚾",
-		"⛳",
-		"🏆",
-		"👾",
-		"🎤",
-		"🎸",
-		"👙",
-		"👑",
-		"🌂",
-		"👜",
-		"💄",
-		"💍",
-		"💎",
-		"☕",
-		"🍺",
-		"🍻",
-		"🍸",
-		"🍔",
-		"🍟",
-		"🍝",
-		"🍣",
-		"🍜",
-		"🍳",
-		"🍦",
-		"🎂",
-		"🍅",
-		"✈",
-		"🚀",
-		"🚲",
-		"🚄",
-		"⚠",
-		"🏁",
-		"🚹",
-		"🚺",
-		"⭕",
-		"✖",
-		"©",
-		"®",
-		"™",
-	];
+		'😁',
+		'😷',
+		'😂',
+		'😝',
+		'😳',
+		'😱',
+		'😔',
+		'😒',
+		'[嘿哈]',
+		'[捂脸]',
+		'[奸笑]',
+		'[机智]',
+		'[皱眉]',
+		'[耶]',
+		'👻',
+		'🙏',
+		'💪',
+		'🎉',
+		'🎁',
+		'[红包]',
+		'[鸡]',
+		'😊',
+		'😃',
+		'☺',
+		'😉',
+		'😍',
+		'😘',
+		'😚',
+		'😬',
+		'😌',
+		'😜',
+		'😏',
+		'😓',
+		'😞',
+		'😖',
+		'😢',
+		'😰',
+		'😨',
+		'😣',
+		'😢',
+		'😭',
+		'😵',
+		'😠',
+		'😡',
+		'😪',
+		'👿',
+		'👽',
+		'❤',
+		'💔',
+		'💘',
+		'✨',
+		'⭐',
+		'❗',
+		'❓',
+		'💤',
+		'💦',
+		'🎵',
+		'🔥',
+		'💩',
+		'👍',
+		'👎',
+		'👊',
+		'✌',
+		'👆',
+		'👇',
+		'👉',
+		'👈',
+		'☝',
+		'💏',
+		'💑',
+		'👦',
+		'👧',
+		'👩',
+		'👨',
+		'👼',
+		'💀',
+		'💋',
+		'☀',
+		'☔',
+		'☁',
+		'⛄',
+		'🌙',
+		'⚡',
+		'🌊',
+		'🐱',
+		'🐶',
+		'🐭',
+		'🐹',
+		'🐰',
+		'🐺',
+		'🐸',
+		'🐯',
+		'🐨',
+		'🐻',
+		'🐷',
+		'🐮',
+		'🐗',
+		'🐵',
+		'🐴',
+		'🐍',
+		'🐦',
+		'🐔',
+		'🐧',
+		'🐛',
+		'🐙',
+		'🐠',
+		'🐳',
+		'🐬',
+		'🌹',
+		'🌺',
+		'🌴',
+		'🌵',
+		'💝',
+		'🎃',
+		'🎅',
+		'🎄',
+		'🔔',
+		'🎈',
+		'💿',
+		'📷',
+		'🎥',
+		'💻',
+		'📺',
+		'☎',
+		'🔓',
+		'🔒',
+		'🔑',
+		'🔨',
+		'💡',
+		'📫',
+		'🛀',
+		'💰',
+		'💣',
+		'🔫',
+		'💊',
+		'🏈',
+		'🏀',
+		'⚽',
+		'⚾',
+		'⛳',
+		'🏆',
+		'👾',
+		'🎤',
+		'🎸',
+		'👙',
+		'👑',
+		'🌂',
+		'👜',
+		'💄',
+		'💍',
+		'💎',
+		'☕',
+		'🍺',
+		'🍻',
+		'🍸',
+		'🍔',
+		'🍟',
+		'🍝',
+		'🍣',
+		'🍜',
+		'🍳',
+		'🍦',
+		'🎂',
+		'🍅',
+		'✈',
+		'🚀',
+		'🚲',
+		'🚄',
+		'⚠',
+		'🏁',
+		'🚹',
+		'🚺',
+		'⭕',
+		'✖',
+		'©',
+		'®',
+		'™',
+	]
 
 	@observable
-	activePanel = "qq";
+	activePanel = 'qq'
 
 	switchPanel = (key) => {
-		this.activePanel = key;
-	};
+		this.activePanel = key
+	}
 
 	// closeMe(e) {
 	//     if (e.path && e.path.indexOf(document.getElementById('emoji-panel-pop')) >= 0) {
@@ -203,9 +203,9 @@ class emojiPanel extends Component {
 	// }
 
 	render() {
-		const { switchPanel, activePanel, fuhao } = this;
+		const { switchPanel, activePanel, fuhao } = this
 
-		console.log("-----render-----:", fuhao);
+		console.log('-----render-----:', fuhao)
 		return (
 			<div>
 				<div className="emoji-panel">
@@ -213,9 +213,9 @@ class emojiPanel extends Component {
 						<div className="hd-item">
 							<a
 								role="button"
-								onClick={() => switchPanel("qq")}
+								onClick={() => switchPanel('qq')}
 								className={`hd-btn ${
-									activePanel === "qq" ? "active" : ""
+									activePanel === 'qq' ? 'active' : ''
 								}`}
 							>
 								QQ表情
@@ -224,9 +224,9 @@ class emojiPanel extends Component {
 						<div className="hd-item">
 							<a
 								role="button"
-								onClick={() => switchPanel("emoji")}
+								onClick={() => switchPanel('emoji')}
 								className={`hd-btn ${
-									activePanel === "emoji" ? "active" : ""
+									activePanel === 'emoji' ? 'active' : ''
 								}`}
 							>
 								符号表情
@@ -234,24 +234,24 @@ class emojiPanel extends Component {
 						</div>
 					</div>
 					<div className="emoji-bd">
-						<div style={{ overflow: "hidden" }}>
-							{activePanel === "qq" && (
+						<div style={{ overflow: 'hidden' }}>
+							{activePanel === 'qq' && (
 								<div className="face-box">
 									<div className="qq-face">
 										{QQfaceMap.map((item) => {
-											<a
+											;<a
 												role="button"
 												key={Math.random()}
 												className={`face qq_face${
 													item[Object.keys(item)[0]]
 												}`}
-											/>;
+											/>
 										})}
 									</div>
 								</div>
 							)}
 
-							{activePanel === "emoji" && (
+							{activePanel === 'emoji' && (
 								<div className="face-box">
 									<div className="emoji-face">
 										{fuhao.map((index) => (
@@ -268,8 +268,8 @@ class emojiPanel extends Component {
 					</div>
 				</div>
 			</div>
-		);
+		)
 	}
 }
 
-export default emojiPanel;
+export default emojiPanel

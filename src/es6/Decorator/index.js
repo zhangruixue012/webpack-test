@@ -1,11 +1,11 @@
 /* eslint-disable */
-import { mixins } from "./mixins";
+import { mixins } from './mixins'
 
 const Foo = {
 	foo() {
-		console.log("foo");
+		console.log('foo')
 	},
-};
+}
 
 @mixins(Foo)
 class MyClass {}

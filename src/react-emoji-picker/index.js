@@ -1,30 +1,30 @@
 /*eslint-disable*/
-import React, { Component } from "react";
-import Picker from "./Picker";
+import React, { Component } from 'react'
+import Picker from './Picker'
 
 class emojiPicker extends Component {
 	constructor(props) {
-		super(props);
+		super(props)
 		this.state = {
-			enteredText: "",
+			enteredText: '',
 			visible: true,
-		};
+		}
 	}
 
 	logEmoji(emoji) {
-		console.log(emoji);
-		this.setState({ enteredText: emoji.unicode });
+		console.log(emoji)
+		this.setState({ enteredText: emoji.unicode })
 	}
 
 	toggleVisible() {
-		this.setState({ visible: !this.state.visible });
+		this.setState({ visible: !this.state.visible })
 	}
 
 	render() {
-		const { enteredText, visible } = this.state;
+		const { enteredText, visible } = this.state
 		return (
 			<div>
-				<div style={{ paddingBottom: "2rem" }}>
+				<div style={{ paddingBottom: '2rem' }}>
 					<Picker
 						onEmojiSelected={this.logEmoji.bind(this)}
 						visible={visible}
@@ -36,8 +36,8 @@ class emojiPicker extends Component {
 				</button>
 				<input type="text" defaultValue={enteredText} />
 			</div>
-		);
+		)
 	}
 }
 
-export default emojiPicker;
+export default emojiPicker
