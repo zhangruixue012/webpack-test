@@ -18,9 +18,9 @@ function doSomething(name) {
 
 function loggingDecorator(wrapped) {
 	return function () {
-		console.log('Starting');
+		console.log("Starting");
 		const result = wrapped.apply(this, arguments);
-		console.log('Finished');
+		console.log("Finished");
 		return result;
 	};
 }

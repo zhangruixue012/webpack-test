@@ -1,6 +1,6 @@
 // CheckboxWithLabel.js
 
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 export default class CheckboxWithLabel extends Component {
 	constructor(props) {
@@ -19,8 +19,14 @@ export default class CheckboxWithLabel extends Component {
 	render() {
 		return (
 			<label>
-				<input type="checkbox" checked={this.state.isChecked} onChange={this.onChange} />
-				{this.state.isChecked ? this.props.labelOn : this.props.labelOff}
+				<input
+					type="checkbox"
+					checked={this.state.isChecked}
+					onChange={this.onChange}
+				/>
+				{this.state.isChecked
+					? this.props.labelOn
+					: this.props.labelOff}
 			</label>
 		);
 	}
