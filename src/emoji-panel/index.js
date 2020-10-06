@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
-import { observable } from 'mobx'
-import { observer } from 'mobx-react'
-import { QQfaceMap } from './qqfaceMap'
-import './panelemoji.less'
-import './face.less'
-import './index.less'
+import React, { Component } from 'react';
+import { observable } from 'mobx';
+import { observer } from 'mobx-react';
+import { QQfaceMap } from './qqfaceMap';
+import './panelemoji.less';
+import './face.less';
+import './index.less';
 
 @observer
 class emojiPanel extends Component {
@@ -186,14 +186,14 @@ class emojiPanel extends Component {
 		'©',
 		'®',
 		'™',
-	]
+	];
 
 	@observable
-	activePanel = 'qq'
+	activePanel = 'qq';
 
 	switchPanel = (key) => {
-		this.activePanel = key
-	}
+		this.activePanel = key;
+	};
 
 	// closeMe(e) {
 	//     if (e.path && e.path.indexOf(document.getElementById('emoji-panel-pop')) >= 0) {
@@ -203,9 +203,9 @@ class emojiPanel extends Component {
 	// }
 
 	render() {
-		const { switchPanel, activePanel, fuhao } = this
+		const { switchPanel, activePanel, fuhao } = this;
 
-		console.log('-----render-----:', fuhao)
+		console.log('-----render-----:', fuhao);
 		return (
 			<div>
 				<div className="emoji-panel">
@@ -239,13 +239,13 @@ class emojiPanel extends Component {
 								<div className="face-box">
 									<div className="qq-face">
 										{QQfaceMap.map((item) => {
-											;<a
+											<a
 												role="button"
 												key={Math.random()}
 												className={`face qq_face${
 													item[Object.keys(item)[0]]
 												}`}
-											/>
+											/>;
 										})}
 									</div>
 								</div>
@@ -268,8 +268,8 @@ class emojiPanel extends Component {
 					</div>
 				</div>
 			</div>
-		)
+		);
 	}
 }
 
-export default emojiPanel
+export default emojiPanel;

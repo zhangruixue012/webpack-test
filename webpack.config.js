@@ -1,20 +1,20 @@
-const path = require('path')
-const argv = require('yargs').argv
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const webpackMerge = require('webpack-merge')
-const WorkboxPlugin = require('workbox-webpack-plugin')
-const { mode, domain } = argv.env
+const path = require('path');
+const argv = require('yargs').argv;
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const webpackMerge = require('webpack-merge');
+const WorkboxPlugin = require('workbox-webpack-plugin');
+const { mode, domain } = argv.env;
 
-console.log('mode:', mode)
-console.log('domain:', domain)
+console.log('mode:', mode);
+console.log('domain:', domain);
 
-const modeConfig = (env) => require(`./build-utils/webpack.${env}`)(env)
-const resolve = (dir) => path.resolve(__dirname, dir)
+const modeConfig = (env) => require(`./build-utils/webpack.${env}`)(env);
+const resolve = (dir) => path.resolve(__dirname, dir);
 
-console.log('我是resolve:', resolve)
+console.log('我是resolve:', resolve);
 
-console.log('modeConfig:', modeConfig)
+console.log('modeConfig:', modeConfig);
 
 module.exports = () => {
 	return webpackMerge(
@@ -71,5 +71,5 @@ module.exports = () => {
 			],
 		},
 		modeConfig(mode)
-	)
-}
+	);
+};
