@@ -6,6 +6,8 @@
 	"scripts": {
 		"webpack": "webpack",
 		"webpack-dev-server": "webpack-dev-server",
+		"prettier": "prettier -c --write 'src/**/*.{js,less}'",
+		"pretty-quick": "pretty-quick --pattern 'src/**/*.{js,less}'",
 		"watch": "webpack --watch",
 		"start:dev": "npm run webpack-dev-server -- --env.mode development --env.domain development",
 		"start:dist": "http-server dist",
