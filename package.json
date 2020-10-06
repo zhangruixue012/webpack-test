@@ -73,7 +73,7 @@
 	"license": "ISC",
 	"husky": {
 		"hooks": {
-			"pre-commit": "pretty-quick --staged && lint-staged",
+			"pre-commit": "lint-staged",
 			"post-commmit": "git update-index --again"
 		}
 	},
