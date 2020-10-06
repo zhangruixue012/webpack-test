@@ -1,6 +1,6 @@
 // CheckboxWithLabel.js
 
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 export default class CheckboxWithLabel extends Component {
 	constructor(props) {

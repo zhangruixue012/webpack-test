@@ -111,16 +111,16 @@
  map(dubble, [6, 7, 8, 9, 10]);
  map(dubble, [10, 20, 30, 40, 50]);*/
 
-			var curry = function(fn) {
-				var _args = [];
+			var curry = function (fn) {
+				var _args = []
 				return function cb() {
 					if (arguments.length == 0) {
-						return fn.apply(this, _args);
+						return fn.apply(this, _args)
 					}
-					Array.prototype.push.apply(_args, arguments);
-					return cb;
-				};
-			};
+					Array.prototype.push.apply(_args, arguments)
+					return cb
+				}
+			}
 		</script>
 	</body>
 </html>

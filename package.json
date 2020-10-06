@@ -87,6 +87,6 @@
 	},
 	"prettier": {
 		"singleQuote": true,
-		"semi": false
+		"semi": true
 	}
 }
