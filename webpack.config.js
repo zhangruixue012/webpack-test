@@ -6,13 +6,34 @@ module.exports = {
     mode: 'development',
     entry: './index.js',
     devServer: {
-        hot: true
+        host: 'localhost',
+        port: 3000,
+        open: true,
+        hot: true,
     },
     module: {
         rules: [
             {
                 test: /\.css$/i,
                 use: [MiniCssExtractPlugin.loader, 'css-loader']
+            },
+            {
+                test: /\.less$/i,
+                use: [MiniCssExtractPlugin.loader, 'css-loader', 'less-loader']
+            },
+            {
+                test: /\.s[ac]ss$/i,
+                use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+            },
+            {
+                test: /\.js$/i,
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
+                }
             }
         ]
     },
@@ -25,6 +46,5 @@ module.exports = {
             template: './index.html'
         }),
         new MiniCssExtractPlugin()
-
     ]
 };

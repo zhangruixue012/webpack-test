@@ -1,9 +1,9 @@
 
-import './index.css'
+import './index.scss'
 
 const aa = 'my first&&';
 
-const bb = aa.repeat(4);
+const bb = aa.repeat(6);
 
 console.log(bb);
 
