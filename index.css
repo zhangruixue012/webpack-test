@@ -1,0 +1,8 @@
+.body {
+    height: 300px;
+    border: 1px solid #f00;
+}
+.content {
+    background: aqua;
+    height: 100%;
+}
